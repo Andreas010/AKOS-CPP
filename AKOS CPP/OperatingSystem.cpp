@@ -43,7 +43,7 @@ void OperatingSystem::Init(const char* title, int xPos, int yPos, int width, int
 		KeyboardManager::Init();
 		Report("KEYBOARD_INITIALISED");
 
-		startScreen.Init(renderer);
+		startScreen.Init();
 		Report("SCREENTEST_INITIALISED");
 
 		TextRenderer::Init(renderer);

@@ -106,8 +106,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Users\winja\source\SDL2\include;C:\Users\winja\source\SDL2 Image\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\winja\source\SDL2\lib\x64;C:\Users\winja\source\SDL2 Image\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\winja\source\repos\AKOS CPP\SDL2\include;C:\Users\winja\source\repos\AKOS CPP\SDL2 Image\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\winja\source\repos\AKOS CPP\SDL2\lib\x64;C:\Users\winja\source\repos\AKOS CPP\SDL2 Image\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -164,7 +164,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\winja\source\SDL2\include;C:\Users\winja\source\SDL2 Image\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\winja\source\repos\AKOS CPP\SDL2\include;C:\Users\winja\source\repos\AKOS CPP\SDL2 Image\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
     </ClCompile>
     <Link>
@@ -172,7 +172,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\winja\source\SDL2\lib\x64;C:\Users\winja\source\SDL2 Image\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\winja\source\repos\AKOS CPP\SDL2\lib\x64;C:\Users\winja\source\repos\AKOS CPP\SDL2 Image\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
