@@ -97,18 +97,17 @@ void OperatingSystem::HandleEvents() {
 	}
 }
 
+void OperatingSystem::Update() {
+	startScreen.ShowLoadingBar();
+}
+
 void OperatingSystem::Render() {
 	SDL_RenderClear(renderer);
 	//render stuff
-	startScreen.ShowLoadingBar(0);
+	
 
 	SDL_RenderPresent(renderer);
 }
-
-void OperatingSystem::Update() {
-	
-}
-
 void OperatingSystem::Clean() {
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);

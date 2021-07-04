@@ -53,7 +53,7 @@
     <ClInclude Include="StartScreen.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="CollisionBox.h">
+    <ClInclude Include="Vector4.h">
       <Filter>Headerdateien\Collision</Filter>
     </ClInclude>
     <ClInclude Include="CollisionCircle.h">
@@ -78,6 +78,9 @@
       <Filter>Headerdateien\System</Filter>
     </ClInclude>
     <ClInclude Include="TextRenderer.h">
+      <Filter>Headerdateien\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitive.h">
       <Filter>Headerdateien\System</Filter>
     </ClInclude>
   </ItemGroup>

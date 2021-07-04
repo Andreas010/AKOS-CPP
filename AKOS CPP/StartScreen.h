@@ -7,5 +7,5 @@ class StartScreen
 {
 public:
 	void Init();
-	void ShowLoadingBar(int curValue);
+	void ShowLoadingBar();
 };

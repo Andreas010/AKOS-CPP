@@ -29,10 +29,11 @@
     <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CollisionBox.h" />
+    <ClInclude Include="Vector4.h" />
     <ClInclude Include="CollisionCircle.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Color.h" />
+    <ClInclude Include="Primitive.h" />
     <ClInclude Include="KeyboardManager.h" />
     <ClInclude Include="MouseManager.h" />
     <ClInclude Include="OperatingSystem.h" />

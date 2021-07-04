@@ -5,10 +5,15 @@
 #include "CollisionCircle.h"
 #include "CollisionManager.h"
 
-void StartScreen::Init() {
+int curValue;
+int maxValue;
 
+void StartScreen::Init() {
+	maxValue = 60 * 5;
 }
 
-void StartScreen::ShowLoadingBar(int curValue) {
+void StartScreen::ShowLoadingBar() {
+	curValue++;
+
 	
 }
