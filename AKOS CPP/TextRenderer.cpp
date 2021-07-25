@@ -3,14 +3,14 @@
 #include<map>
 #include<iostream>
 
-SDL_Renderer* render;
+SDL_Renderer* textWindowRenderer;
 SDL_Surface* fontImageSurface;
 const char* path = "assets/fontImage.png";
 
 std::map<char, int> my_map;
 
 void TextRenderer::Init(SDL_Renderer* renderer) {
-	render = renderer;
+	textWindowRenderer = renderer;
 	fontImageSurface = IMG_Load(path);
 	my_map = std::map<char, int>{
 		{' ', 0  },
@@ -53,7 +53,7 @@ void TextRenderer::Init(SDL_Renderer* renderer) {
 	};
 }
 
-void TextRenderer::DrawCharacter(char character, Vector2 position, int size, Color color1, Color color2) {
+void TextRenderer::RenderCharacter(char character, Vector2 position, int size, Color color1, Color color2) {
 	int index = my_map[character];
 	//TextureManager::DrawTexture(render, fontImage, Vector2(index, 0), Vector2(8, 8), position, Vector2(8 * size, 8 * size));
 
@@ -86,16 +86,16 @@ void TextRenderer::DrawCharacter(char character, Vector2 position, int size, Col
 
 	SDL_UnlockSurface(fontImageSurface);
 
-	SDL_Texture* fontImage = SDL_CreateTextureFromSurface(render, fontImageSurface);
+	SDL_Texture* fontImage = SDL_CreateTextureFromSurface(textWindowRenderer, fontImageSurface);
 
-	SDL_RenderCopy(render, fontImage, &rect1, &rect2);
+	SDL_RenderCopy(textWindowRenderer, fontImage, &rect1, &rect2);
 
 	SDL_DestroyTexture(fontImage);
 }
 
-void TextRenderer::DrawText(const char* text, Vector2 position, int size, Color color1, Color color2) {
+void TextRenderer::RenderText(const char* text, Vector2 position, int size, Color color1, Color color2) {
 	for (int i = 0; i < SDL_strlen(text); i++)
 	{
-		DrawCharacter(text[i], Vector2(position.x + (i * 8 * size), position.y), size, color1, color2);
+		RenderCharacter(text[i], Vector2(position.x + (i * 8 * size), position.y), size, color1, color2);
 	}
 }

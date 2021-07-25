@@ -1,14 +1,20 @@
 #include "OperatingSystem.h"
 #include "TextureManager.h"
-#include "StartScreen.h"
 #include "KeyboardManager.h"
 #include "MouseManager.h"
 #include "TextRenderer.h"
+#include "Primitive.h"
+#include "CollisionManager.h"
 #include <string>
 
+#include "ExampleClass.h"
+
 SDL_Event OperatingSystem::event;
-StartScreen startScreen;
-TextRenderer textRenderer;
+
+//Put your references here
+//e.g.
+//TestClass* testClass;
+ExampleClass* exampleClass;
 
 OperatingSystem::OperatingSystem() {
 	OperatingSystem::cnt = 0;
@@ -17,40 +23,42 @@ OperatingSystem::OperatingSystem() {
 	OperatingSystem::window = nullptr;
 }
 
-OperatingSystem::~OperatingSystem() {
-
-}
-
 void OperatingSystem::Init(const char* title, int xPos, int yPos, int width, int height)
 {
 	if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
-		Report("SUBSYSTEM_INITIALISED");
+		Report("Debug", "SUBSYSTEM_INITIALISED");
+		Report("Debug", "");
+		Report("Debug", "Engine by Andy010#6381");
+		Report("Debug", "Version 1.0");
+		Report("Debug", "");
 
 		window = SDL_CreateWindow(title, xPos, yPos, width, height, SDL_WINDOW_SHOWN);
 		if (window) {
-			Report("WINDOW_CREATED");
+			Report("Debug", "WINDOW_CREATED");
 		}
 
 		renderer = SDL_CreateRenderer(window, -1, 0);
 		if (renderer) {
 			SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-			Report("RENDERER_CREATED");
+			Report("Debug", "RENDERER_CREATED");
 		}
 
 		TextureManager::Init(renderer);
-		Report("TEXTUREMANAGER_INITIALISED");
+		Report("Debug", "TEXTUREMANAGER_INITIALISED");
 
 		KeyboardManager::Init();
-		Report("KEYBOARD_INITIALISED");
-
-		startScreen.Init();
-		Report("SCREENTEST_INITIALISED");
+		Report("Debug", "KEYBOARD_INITIALISED");
 
 		TextRenderer::Init(renderer);
-		Report("TEXTMANAGER_INITIALISED");
+		Report("Debug", "TEXTMANAGER_INITIALISED");
 
 		MouseManager::Init();
-		Report("MOUSE_INITIALISED");
+		Report("Debug", "MOUSE_INITIALISED");
+
+		Primitive::Init(renderer);
+		Report("Debug", "PRIMITIVE_INITIALISED");
+
+		InitClasses();
 
 		isRunning = true;
 	}
@@ -59,8 +67,14 @@ void OperatingSystem::Init(const char* title, int xPos, int yPos, int width, int
 	}
 }
 
+void OperatingSystem::InitClasses() {
+	//Put your initialisation code here
+
+	exampleClass->Init(renderer);
+}
+
 void OperatingSystem::HandleEvents() {
-	KeyboardManager::Init();
+	//KeyboardManager::Init();
 	MouseManager::Init();
 
 	while (SDL_PollEvent(&event)) {
@@ -98,13 +112,15 @@ void OperatingSystem::HandleEvents() {
 }
 
 void OperatingSystem::Update() {
-	startScreen.ShowLoadingBar();
+	//Put your update loops here
+	exampleClass->Update();
 }
 
 void OperatingSystem::Render() {
+	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 	SDL_RenderClear(renderer);
-	//render stuff
-	
+	//Put render code here
+	exampleClass->Render();
 
 	SDL_RenderPresent(renderer);
 }
@@ -112,5 +128,5 @@ void OperatingSystem::Clean() {
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
 	SDL_Quit();
-	Report("OPERATINGSYSTEM_EXIT");
+	Report("Debug", "OPERATINGSYSTEM_EXIT");
 }

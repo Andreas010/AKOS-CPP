@@ -24,9 +24,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="StartScreen.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="Vector2.h">
       <Filter>Headerdateien\Collision</Filter>
     </ClCompile>
@@ -48,11 +45,14 @@
     <ClCompile Include="main.cpp">
       <Filter>Quelldateien\System</Filter>
     </ClCompile>
+    <ClCompile Include="Primitive.cpp">
+      <Filter>Quelldateien\System</Filter>
+    </ClCompile>
+    <ClCompile Include="ExampleClass.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="StartScreen.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="Vector4.h">
       <Filter>Headerdateien\Collision</Filter>
     </ClInclude>
@@ -81,6 +81,12 @@
       <Filter>Headerdateien\System</Filter>
     </ClInclude>
     <ClInclude Include="Primitive.h">
+      <Filter>Headerdateien\System</Filter>
+    </ClInclude>
+    <ClInclude Include="ExampleClass.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
       <Filter>Headerdateien\System</Filter>
     </ClInclude>
   </ItemGroup>

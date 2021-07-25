@@ -1,15 +1,16 @@
 #include "TextureManager.h"
 #include "SDL_image.h"
+#include "OperatingSystem.h"
 
-SDL_Renderer* rend;
+SDL_Renderer* textureWindowRenderer;
 
 void TextureManager::Init(SDL_Renderer* renderer) {
-	rend = renderer;
+	textureWindowRenderer = renderer;
 }
 
 SDL_Texture* TextureManager::LoadTexture(const char* filename) {
 	SDL_Surface* tmpSurface = IMG_Load(filename);
-	SDL_Texture* texture = SDL_CreateTextureFromSurface(rend, tmpSurface);
+	SDL_Texture* texture = SDL_CreateTextureFromSurface(textureWindowRenderer, tmpSurface);
 	SDL_FreeSurface(tmpSurface);
 	return texture;
 }
@@ -21,7 +22,7 @@ void TextureManager::DrawTexture(SDL_Texture* texture, Vector2 pos, Vector2 size
 	rect.w = size.x;
 	rect.h = size.y;
 
-	SDL_RenderCopy(rend, texture, NULL, &rect);
+	SDL_RenderCopy(textureWindowRenderer, texture, NULL, &rect);
 }
 
 void TextureManager::DrawTexture(SDL_Texture* texture, Vector2 pos1, Vector2 size1, Vector2 pos2, Vector2 size2) {
@@ -37,5 +38,5 @@ void TextureManager::DrawTexture(SDL_Texture* texture, Vector2 pos1, Vector2 siz
 	rect2.w = size2.x;
 	rect2.h = size2.y;
 
-	SDL_RenderCopy(rend, texture, &rect1, &rect2);
+	SDL_RenderCopy(textureWindowRenderer, texture, &rect1, &rect2);
 }

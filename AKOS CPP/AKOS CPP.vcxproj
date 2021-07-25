@@ -19,25 +19,27 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ExampleClass.cpp" />
     <ClCompile Include="KeyboardManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MouseManager.cpp" />
     <ClCompile Include="OperatingSystem.cpp" />
+    <ClCompile Include="Primitive.cpp" />
     <ClCompile Include="TextRenderer.cpp" />
     <ClCompile Include="Vector2.h" />
-    <ClCompile Include="StartScreen.cpp" />
     <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ExampleClass.h" />
+    <ClInclude Include="Math.h" />
+    <ClInclude Include="Primitive.h" />
     <ClInclude Include="Vector4.h" />
     <ClInclude Include="CollisionCircle.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Color.h" />
-    <ClInclude Include="Primitive.h" />
     <ClInclude Include="KeyboardManager.h" />
     <ClInclude Include="MouseManager.h" />
     <ClInclude Include="OperatingSystem.h" />
-    <ClInclude Include="StartScreen.h" />
     <ClInclude Include="TextRenderer.h" />
     <ClInclude Include="TextureManager.h" />
   </ItemGroup>
